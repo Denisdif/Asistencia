@@ -33,8 +33,10 @@
 							<tr> 
 								<td>#</td> 
 								<th>Nombre</th>
+								<th>Tipo</th>
 								<th>Hora Entrada</th>
 								<th>Hora Salida</th>
+								<th>Tolerancia</th>
 								<th>Dia</th>
 								<th>Categoria De Horario Id</th>
 								<td>ACTIONS</td>
@@ -45,8 +47,10 @@
 							<tr>
 								<td>{{ $loop->iteration }}</td> 
 								<td>{{ $row->nombre }}</td>
+								<td>{{ $row->tipo }}</td>
 								<td>{{ $row->hora_entrada }}</td>
 								<td>{{ $row->hora_salida }}</td>
+								<td>{{ $row->tolerancia }}</td>
 								<td>{{ $row->dia }}</td>
 								<td>{{ $row->categoria_de_horario_id }}</td>
 								<td width="90">

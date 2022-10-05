@@ -13,7 +13,7 @@ class Jornada extends Model
 
     protected $table = 'jornadas';
 
-    protected $fillable = ['nombre','hora_entrada','hora_salida','dia','categoria_de_horario_id'];
+    protected $fillable = ['nombre','tipo','hora_entrada','hora_salida','tolerancia','dia','categoria_de_horario_id'];
 	
     /**
      * @return \Illuminate\Database\Eloquent\Relations\HasOne

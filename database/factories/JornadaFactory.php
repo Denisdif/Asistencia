@@ -14,8 +14,10 @@ class JornadaFactory extends Factory
     {
         return [
 			'nombre' => $this->faker->name,
+			'tipo' => $this->faker->name,
 			'hora_entrada' => $this->faker->name,
 			'hora_salida' => $this->faker->name,
+			'tolerancia' => $this->faker->name,
 			'dia' => $this->faker->name,
 			'categoria_de_horario_id' => $this->faker->name,
         ];
