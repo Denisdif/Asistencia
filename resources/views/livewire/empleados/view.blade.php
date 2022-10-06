@@ -45,13 +45,9 @@
 								<td>{{ $row->categoria_de_horario_id }}</td>
 								<td width="90">
 								<div class="btn-group">
-									<button type="button" class="btn btn-info btn-sm dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-									Actions
-									</button>
-									<div class="dropdown-menu dropdown-menu-right">
+									<a href="{{route('incidencias', $row->id)}}" class="dropdown-item" ><i class="fa fa-edit"></i> Incidencias </a>							 
 									<a data-toggle="modal" data-target="#updateModal" class="dropdown-item" wire:click="edit({{$row->id}})"><i class="fa fa-edit"></i> Edit </a>							 
 									<a class="dropdown-item" onclick="confirm('Confirm Delete Empleado id {{$row->id}}? \nDeleted Empleados cannot be recovered!')||event.stopImmediatePropagation()" wire:click="destroy({{$row->id}})"><i class="fa fa-trash"></i> Delete </a>   
-									</div>
 								</div>
 								</td>
 							@endforeach

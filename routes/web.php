@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Livewire\Nuevos\Horarios;
+use App\Http\Livewire\Nuevos\Incidencias;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -31,6 +32,7 @@ Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name
 
 
 Route::middleware('auth')->group(function() {
-	Route::get('horarios/jornadas/{id}', Horarios::class)->name('jornadas');
+	Route::get('horarios/{id}/jornadas/', Horarios::class)->name('jornadas');
+	Route::get('empleados/{id}/incidencias', Incidencias::class)->name('incidencias');
 });
 	

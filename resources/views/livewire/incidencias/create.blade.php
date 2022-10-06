@@ -8,30 +8,8 @@
                      <span aria-hidden="true close-btn">×</span>
                 </button>
             </div>
-           <div class="modal-body">
-				<form>
-            <div class="form-group">
-                <label for="nombre"></label>
-                <input wire:model="nombre" type="text" class="form-control" id="nombre" placeholder="Nombre">@error('nombre') <span class="error text-danger">{{ $message }}</span> @enderror
-            </div>
-            <div class="form-group">
-                <label for="descripcion"></label>
-                <input wire:model="descripcion" type="text" class="form-control" id="descripcion" placeholder="Descripcion">@error('descripcion') <span class="error text-danger">{{ $message }}</span> @enderror
-            </div>
-            <div class="form-group">
-                <label for="fecha_hora"></label>
-                <input wire:model="fecha_hora" type="text" class="form-control" id="fecha_hora" placeholder="Fecha Hora">@error('fecha_hora') <span class="error text-danger">{{ $message }}</span> @enderror
-            </div>
-            <div class="form-group">
-                <label for="descontar"></label>
-                <input wire:model="descontar" type="text" class="form-control" id="descontar" placeholder="Descontar">@error('descontar') <span class="error text-danger">{{ $message }}</span> @enderror
-            </div>
-            <div class="form-group">
-                <label for="empleado_id"></label>
-                <input wire:model="empleado_id" type="text" class="form-control" id="empleado_id" placeholder="Empleado Id">@error('empleado_id') <span class="error text-danger">{{ $message }}</span> @enderror
-            </div>
-
-                </form>
+            <div class="modal-body">
+                @include('livewire.incidencias.form')
             </div>
             <div class="modal-footer">
                 <button type="button" class="btn btn-secondary close-btn" data-dismiss="modal">Close</button>

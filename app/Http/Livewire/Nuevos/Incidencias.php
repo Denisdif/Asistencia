@@ -1,10 +1,10 @@
 <?php
 
-namespace App\Http\Livewire;
+namespace App\Http\Livewire\Nuevos;
 
-use App\Models\Empleado;
 use Livewire\Component;
 use Livewire\WithPagination;
+use App\Models\Empleado;
 use App\Models\Incidencia;
 
 class Incidencias extends Component
@@ -12,26 +12,24 @@ class Incidencias extends Component
     use WithPagination;
 
 	protected $paginationTheme = 'bootstrap';
-    public $selected_id, $keyWord, $nombre, $descripcion, $fecha_hora, $descontar, $empleado_id;
+    public $selected_id, $keyWord, $nombre, $descripcion, $fecha_hora, $descontar;
     public $updateMode = false;
+    public $empleado;
 
-    public function mount()
+    public function mount($id)
     {
-
+        if (Empleado::find($id)) $this->empleado = Empleado::find($id); else abort(404);        
     }
 
     public function render()
     {
-		$keyWord = '%'.$this->keyWord .'%';
-        return view('livewire.incidencias.view', [
+        return view('livewire.incidencias.view',  [
             'incidencias' => Incidencia::latest()
-						->orWhere('nombre', 'LIKE', $keyWord)
-						->orWhere('descripcion', 'LIKE', $keyWord)
-						->orWhere('fecha_hora', 'LIKE', $keyWord)
-						->orWhere('descontar', 'LIKE', $keyWord)
-						->orWhere('empleado_id', 'LIKE', $keyWord)
+                        ->where('empleado_id', $this->empleado->id)
 						->paginate(10),
-        ]);
+        ])
+        ->extends('livewire/incidencias/index')
+        ->section('content');;
     }
 	
     public function cancel()
@@ -46,7 +44,6 @@ class Incidencias extends Component
 		$this->descripcion = null;
 		$this->fecha_hora = null;
 		$this->descontar = null;
-		$this->empleado_id = null;
     }
 
     public function store()
@@ -55,15 +52,14 @@ class Incidencias extends Component
 		'nombre' => 'required',
 		'fecha_hora' => 'required',
 		'descontar' => 'required',
-		'empleado_id' => 'required',
         ]);
 
         Incidencia::create([ 
-			'nombre' => $this-> nombre,
-			'descripcion' => $this-> descripcion,
-			'fecha_hora' => $this-> fecha_hora,
-			'descontar' => $this-> descontar,
-			'empleado_id' => $this-> empleado_id
+			'nombre' => $this->nombre,
+			'descripcion' => $this->descripcion,
+			'fecha_hora' => $this->fecha_hora,
+			'descontar' => $this->descontar,
+			'empleado_id' => $this->empleado->id
         ]);
         
         $this->resetInput();
@@ -80,7 +76,6 @@ class Incidencias extends Component
 		$this->descripcion = $record-> descripcion;
 		$this->fecha_hora = $record-> fecha_hora;
 		$this->descontar = $record-> descontar;
-		$this->empleado_id = $record-> empleado_id;
 		
         $this->updateMode = true;
     }
@@ -91,7 +86,6 @@ class Incidencias extends Component
 		'nombre' => 'required',
 		'fecha_hora' => 'required',
 		'descontar' => 'required',
-		'empleado_id' => 'required',
         ]);
 
         if ($this->selected_id) {
@@ -101,7 +95,6 @@ class Incidencias extends Component
 			'descripcion' => $this-> descripcion,
 			'fecha_hora' => $this-> fecha_hora,
 			'descontar' => $this-> descontar,
-			'empleado_id' => $this-> empleado_id
             ]);
 
             $this->resetInput();
