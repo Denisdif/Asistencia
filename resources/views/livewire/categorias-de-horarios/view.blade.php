@@ -39,17 +39,13 @@
 						<tbody>
 							@foreach($categoriasDeHorarios as $row)
 							<tr>
-								<td>{{ $loop->iteration }}</td> 
+								<td>{{ $row->id }}</td> 
 								<td>{{ $row->nombre }}</td>
 								<td width="90">
 								<div class="btn-group">
-									<button type="button" class="btn btn-info btn-sm dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-									Actions
-									</button>
-									<div class="dropdown-menu dropdown-menu-right">
+									<a href="{{route('jornadas', $row->id)}}" class="dropdown-item"><i class="fa fa-edit"></i> Jornadas </a>							 
 									<a data-toggle="modal" data-target="#updateModal" class="dropdown-item" wire:click="edit({{$row->id}})"><i class="fa fa-edit"></i> Edit </a>							 
 									<a class="dropdown-item" onclick="confirm('Confirm Delete Categorias De Horario id {{$row->id}}? \nDeleted Categorias De Horarios cannot be recovered!')||event.stopImmediatePropagation()" wire:click="destroy({{$row->id}})"><i class="fa fa-trash"></i> Delete </a>   
-									</div>
 								</div>
 								</td>
 							@endforeach
