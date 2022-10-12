@@ -36,20 +36,20 @@
 					@auth()
                     <ul class="navbar-nav mr-auto">
 						<!--Nav Bar Hooks - Do not delete!!-->
-						<li class="nav-item">
-                            <a href="{{ url('/horas_extras') }}" class="nav-link"><i class="fab fa-laravel text-info"></i> Horas_extras</a> 
-                        </li>
-						<li class="nav-item">
+						{{-- <li class="nav-item">
+                            <a href="{{ url('/horas_extras') }}" class="nav-link"><i class="fab fa-laravel text-info"></i> Horas extras</a> 
+                        </li> --}}
+						{{-- <li class="nav-item">
                             <a href="{{ url('/incidencias') }}" class="nav-link"><i class="fab fa-laravel text-info"></i> Incidencias</a> 
-                        </li>
-						<li class="nav-item">
+                        </li> --}}
+						{{-- <li class="nav-item">
                             <a href="{{ url('/jornadas') }}" class="nav-link"><i class="fab fa-laravel text-info"></i> Jornadas</a> 
-                        </li>
+                        </li> --}}
 						<li class="nav-item">
                             <a href="{{ url('/empleados') }}" class="nav-link"><i class="fab fa-laravel text-info"></i> Empleados</a> 
                         </li>
 						<li class="nav-item">
-                            <a href="{{ url('/categorias_de_horarios') }}" class="nav-link"><i class="fab fa-laravel text-info"></i> Categorias_de_horarios</a> 
+                            <a href="{{ url('/categorias_de_horarios') }}" class="nav-link"><i class="fab fa-laravel text-info"></i> Categorias de horarios</a> 
                         </li>
                     </ul>
 					@endauth()
