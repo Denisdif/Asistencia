@@ -27,7 +27,7 @@ class Jornadas extends Component
 						->orWhere('dia', 'LIKE', $keyWord)
 						->orWhere('categoria_de_horario_id', 'LIKE', $keyWord)
 						->paginate(10),
-        ]);
+		]);
     }
 	
     public function cancel()

@@ -3,7 +3,7 @@
     <div class="modal-dialog" role="document">
         <div class="modal-content">
             <div class="modal-header">
-                <h5 class="modal-title" id="createDataModalLabel">Create New Categorias De Horario</h5>
+                <h5 class="modal-title" id="createDataModalLabel">Crear nueva categoría de horario</h5>
                 <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                      <span aria-hidden="true close-btn">×</span>
                 </button>
@@ -11,15 +11,15 @@
            <div class="modal-body">
 				<form>
             <div class="form-group">
-                <label for="nombre"></label>
-                <input wire:model="nombre" type="text" class="form-control" id="nombre" placeholder="Nombre">@error('nombre') <span class="error text-danger">{{ $message }}</span> @enderror
+                <label for="nombre">Nombre de la categoría de horario</label>
+                <input wire:model="nombre" type="text" class="form-control" id="nombre" placeholder="Tiempo completo, tiempo parcial...">@error('nombre') <span class="error text-danger">{{ $message }}</span> @enderror
             </div>
 
                 </form>
             </div>
             <div class="modal-footer">
-                <button type="button" class="btn btn-secondary close-btn" data-dismiss="modal">Close</button>
-                <button type="button" wire:click.prevent="store()" class="btn btn-primary close-modal">Save</button>
+                <button type="button" class="btn btn-secondary close-btn" data-dismiss="modal">Cerrar</button>
+                <button type="button" wire:click.prevent="store()" class="btn btn-primary close-modal">Guardar</button>
             </div>
         </div>
     </div>
