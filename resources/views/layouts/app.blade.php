@@ -36,6 +36,18 @@
 					@auth()
                     <ul class="navbar-nav mr-auto">
 						<!--Nav Bar Hooks - Do not delete!!-->
+						<li class="nav-item">
+                            <a href="{{ url('/puestos') }}" class="nav-link"><i class="fab fa-laravel text-info"></i> Puestos</a> 
+                        </li>
+						<li class="nav-item">
+                            <a href="{{ url('/departamentos') }}" class="nav-link"><i class="fab fa-laravel text-info"></i> Departamentos</a> 
+                        </li>
+						<li class="nav-item">
+                            <a href="{{ url('/areas') }}" class="nav-link"><i class="fab fa-laravel text-info"></i> Areas</a> 
+                        </li>
+						<li class="nav-item">
+                            <a href="{{ url('/empresas') }}" class="nav-link"><i class="fab fa-laravel text-info"></i> Empresas</a> 
+                        </li>
 						{{-- <li class="nav-item">
                             <a href="{{ url('/horas_extras') }}" class="nav-link"><i class="fab fa-laravel text-info"></i> Horas extras</a> 
                         </li> --}}
