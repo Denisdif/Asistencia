@@ -12,9 +12,11 @@ class EmpleadoFactory extends Factory
 
     public function definition()
     {
+        $categoria_de_horario_id = \App\Models\CategoriasDeHorario::all()->random()->id;
+
         return [
 			'nombre' => $this->faker->name,
-			'categoria_de_horario_id' => $this->faker->name,
+			'categoria_de_horario_id' => $categoria_de_horario_id,
         ];
     }
 }
