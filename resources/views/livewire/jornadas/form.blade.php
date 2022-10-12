@@ -1,9 +1,9 @@
 <form>
     <!-- Nombre de la jornada -->
-    <div class="form-group">
+    {{-- <div class="form-group">
         <label for="nombre">Nombre</label>
         <input wire:model.defer="nombre" type="text" class="form-control" id="nombre" placeholder="Nombre de la jornada">@error('nombre') <span class="error text-danger">{{ $message }}</span> @enderror
-    </div>
+    </div> --}}
 
     <!-- Tipo de jornada -->
     <div class="form-group">

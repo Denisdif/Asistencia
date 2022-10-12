@@ -49,6 +49,8 @@ class Jornadas extends Component
 
     public function store()
     {
+		$this->nombre = "";
+
         $this->validate([
 		'nombre' => 'required',
 		'tipo' => 'required',
@@ -92,6 +94,8 @@ class Jornadas extends Component
 
     public function update()
     {
+		$this->nombre = "";
+
         $this->validate([
 		'nombre' => 'required',
 		'tipo' => 'required',
