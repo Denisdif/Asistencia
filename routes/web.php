@@ -25,6 +25,7 @@ Auth::routes();
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
 
 //Route Hooks - Do not delete//
+	Route::view('tipos_de_incidencias', 'livewire.tipos-de-incidencias.index')->middleware('auth');
 	Route::view('horas_extras', 'livewire.horas-extras.index')->middleware('auth');
 	Route::view('incidencias', 'livewire.incidencias.index')->middleware('auth');
 	//Route::view('jornadas', 'livewire.jornadas.index')->middleware('auth');
