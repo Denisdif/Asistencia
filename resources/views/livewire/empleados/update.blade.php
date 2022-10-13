@@ -11,15 +11,7 @@
             <div class="modal-body">
                 <form>
 					<input type="hidden" wire:model="selected_id">
-            <div class="form-group">
-                <label for="nombre"></label>
-                <input wire:model="nombre" type="text" class="form-control" id="nombre" placeholder="Nombre">@error('nombre') <span class="error text-danger">{{ $message }}</span> @enderror
-            </div>
-            <div class="form-group">
-                <label for="categoria_de_horario_id"></label>
-                <input wire:model="categoria_de_horario_id" type="text" class="form-control" id="categoria_de_horario_id" placeholder="Categoria De Horario Id">@error('categoria_de_horario_id') <span class="error text-danger">{{ $message }}</span> @enderror
-            </div>
-
+                    @include('livewire.empleados.form')
                 </form>
             </div>
             <div class="modal-footer">

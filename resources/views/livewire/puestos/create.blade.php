@@ -10,15 +10,7 @@
             </div>
            <div class="modal-body">
 				<form>
-            <div class="form-group">
-                <label for="nombre_puesto"></label>
-                <input wire:model="nombre_puesto" type="text" class="form-control" id="nombre_puesto" placeholder="Nombre Puesto">@error('nombre_puesto') <span class="error text-danger">{{ $message }}</span> @enderror
-            </div>
-            <div class="form-group">
-                <label for="departamento_id"></label>
-                <input wire:model="departamento_id" type="text" class="form-control" id="departamento_id" placeholder="Departamento Id">@error('departamento_id') <span class="error text-danger">{{ $message }}</span> @enderror
-            </div>
-
+                    @include('livewire.puestos.form')
                 </form>
             </div>
             <div class="modal-footer">

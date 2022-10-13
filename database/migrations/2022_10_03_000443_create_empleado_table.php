@@ -16,7 +16,11 @@ return new class extends Migration
         Schema::create('empleados', function (Blueprint $table) {
             $table->id();
             $table->string('nombre');
+            $table->unsignedBigInteger('puesto_id');
             $table->unsignedBigInteger('categoria_de_horario_id');
+
+            $table->foreign('puesto_id')->references('id')->on('puestos');
+            $table->foreign('categoria_de_horario_id')->references('id')->on('categorias_de_horarios');
             $table->timestamps();
         });
     }

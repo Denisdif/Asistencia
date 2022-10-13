@@ -11,15 +11,7 @@
             <div class="modal-body">
                 <form>
 					<input type="hidden" wire:model="selected_id">
-            <div class="form-group">
-                <label for="nombre_departamento"></label>
-                <input wire:model="nombre_departamento" type="text" class="form-control" id="nombre_departamento" placeholder="Nombre Departamento">@error('nombre_departamento') <span class="error text-danger">{{ $message }}</span> @enderror
-            </div>
-            <div class="form-group">
-                <label for="area_id"></label>
-                <input wire:model="area_id" type="text" class="form-control" id="area_id" placeholder="Area Id">@error('area_id') <span class="error text-danger">{{ $message }}</span> @enderror
-            </div>
-
+                    @include('livewire.departamentos.form')
                 </form>
             </div>
             <div class="modal-footer">

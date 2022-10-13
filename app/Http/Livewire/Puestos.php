@@ -2,6 +2,9 @@
 
 namespace App\Http\Livewire;
 
+use App\Models\Area;
+use App\Models\Departamento;
+use App\Models\Empresa;
 use Livewire\Component;
 use Livewire\WithPagination;
 use App\Models\Puesto;
@@ -11,7 +14,7 @@ class Puestos extends Component
     use WithPagination;
 
 	protected $paginationTheme = 'bootstrap';
-    public $selected_id, $keyWord, $nombre_puesto, $departamento_id;
+    public $selected_id, $keyWord, $nombre_puesto, $departamento_id, $empresa_id ,$area_id;
     public $updateMode = false;
 
     public function render()
@@ -22,6 +25,9 @@ class Puestos extends Component
 						->orWhere('nombre_puesto', 'LIKE', $keyWord)
 						->orWhere('departamento_id', 'LIKE', $keyWord)
 						->paginate(10),
+            'empresas'      => Empresa::all(),
+            'areas'         => Area::where('empresa_id', $this->empresa_id)->get(),
+            'departamentos' => Departamento::where('area_id', $this->area_id)->get(),
         ]);
     }
 	

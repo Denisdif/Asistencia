@@ -21,10 +21,9 @@ return new class extends Migration
             $table->time('hora_entrada');
             $table->time('hora_salida');
             $table->time('tolerancia');
-            
             $table->unsignedBigInteger('categoria_de_horario_id');
+            
             $table->foreign('categoria_de_horario_id')->references('id')->on('categorias_de_horarios');
-
             $table->timestamps();
         });
     }

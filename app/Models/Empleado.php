@@ -13,7 +13,7 @@ class Empleado extends Model
 
     protected $table = 'empleados';
 
-    protected $fillable = ['nombre','categoria_de_horario_id'];
+    protected $fillable = ['nombre','categoria_de_horario_id', 'puesto_id'];
 	
     /**
      * @return \Illuminate\Database\Eloquent\Relations\HasMany

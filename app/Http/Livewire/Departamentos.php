@@ -2,16 +2,18 @@
 
 namespace App\Http\Livewire;
 
+use App\Models\Area;
 use Livewire\Component;
 use Livewire\WithPagination;
 use App\Models\Departamento;
+use App\Models\Empresa;
 
 class Departamentos extends Component
 {
     use WithPagination;
 
 	protected $paginationTheme = 'bootstrap';
-    public $selected_id, $keyWord, $nombre_departamento, $area_id;
+    public $selected_id, $keyWord, $nombre_departamento, $empresa_id ,$area_id;
     public $updateMode = false;
 
     public function render()
@@ -22,6 +24,8 @@ class Departamentos extends Component
 						->orWhere('nombre_departamento', 'LIKE', $keyWord)
 						->orWhere('area_id', 'LIKE', $keyWord)
 						->paginate(10),
+            'empresas' => Empresa::all(),
+            'areas'    => Area::where('empresa_id', $this->empresa_id)->get(),
         ]);
     }
 	

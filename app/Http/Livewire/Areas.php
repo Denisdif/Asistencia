@@ -5,6 +5,7 @@ namespace App\Http\Livewire;
 use Livewire\Component;
 use Livewire\WithPagination;
 use App\Models\Area;
+use App\Models\Empresa;
 
 class Areas extends Component
 {
@@ -22,6 +23,7 @@ class Areas extends Component
 						->orWhere('nombre_area', 'LIKE', $keyWord)
 						->orWhere('empresa_id', 'LIKE', $keyWord)
 						->paginate(10),
+            'empresas' => Empresa::all(),
         ]);
     }
 	
